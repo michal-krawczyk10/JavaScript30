@@ -2,13 +2,54 @@
 
 @import "_variables";
 
-body {
-  background: $wtf;
-  color: #193549;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style-type: none;
+}
+html {
+	box-sizing: border-box;
+	margin: 0;
 }
 
+body {
+	background: $main;
+	color: $white;
+	min-height: 100vh;
+}
 
+.day {
+	padding: 60px;
+	width: 100vw;
+	margin-bottom: 20px;
+	border-bottom: 3px double $white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.day1 {
+	&__container {
+		display: flex;
+		text-align: center;
+		flex-wrap: wrap;
+	}
+	&__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+		width: 96px;
+		height: 96px;
+		line-height: 1.5;
+		padding: 8px;
+		border: 2px solid black;
+		margin: 8px;
+		background-color: rgb(0, 0, 0, 0.2);
+		&--special {
+			display: block;
+			color: $yellow;
+		}
+	}
+}
