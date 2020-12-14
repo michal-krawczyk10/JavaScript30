@@ -21,6 +21,9 @@ function playSound(e) {
 
 window.addEventListener("keydown", playSound);
 
+// button.addEventListener("click", playSound);   ----czemu to nie dziaaaa
+// button.onclick = playSound;                    
+
 for (let button of buttons) {
 	button.addEventListener("transitionend", () => {
 		button.classList.remove("day1__button--click");
