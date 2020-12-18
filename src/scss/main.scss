@@ -19,7 +19,13 @@ body {
 	color: $white;
 	min-height: 100vh;
 }
-
+h1 {
+	text-align: center;
+	padding: 60px;
+	width: 100vw;
+	border-bottom: 3px double $white;
+	margin: 0;
+}
 .day {
 	padding: 60px;
 	width: 100vw;
@@ -32,6 +38,11 @@ body {
 
 .day1 {
 	&__container {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+	}
+	&__list {
 		display: flex;
 		text-align: center;
 		flex-wrap: wrap;
@@ -48,13 +59,6 @@ body {
 		margin: 8px;
 		background-color: rgb(0, 0, 0, 0.2);
 		transition: all 0.1s;
-		&:hover {
-			cursor: pointer;
-		}
-		&:hover,
-		:focus {
-			background-color: rgb(0, 0, 0, 0.3);
-		}
 		&--click {
 			transform: scale(1.1);
 			background-color: rgb(0, 0, 0, 0.3);

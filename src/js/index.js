@@ -4,6 +4,9 @@ import "../scss/main.scss";
 // import {registerSW} from './pwa.js';
 // registerSW();
 
+
+// DAY1
+
 const buttons = document.querySelectorAll(".day1__button--js");
 
 // buttons.addEventListener("click", () => {
@@ -29,3 +32,6 @@ for (let button of buttons) {
 		button.classList.remove("day1__button--click");
 	});
 }
+
+// DAY2 
+
