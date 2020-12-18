@@ -16,32 +16,32 @@ html {
 
 body {
 	background: $main;
-	color: $white;
+	color: $font;
 	min-height: 100vh;
 }
 h1 {
 	text-align: center;
 	padding: 60px;
 	width: 100vw;
-	border-bottom: 3px double $white;
+	border-bottom: 3px double $font;
 	margin: 0;
 }
 .day {
 	padding: 60px;
 	width: 100vw;
 	margin-bottom: 20px;
-	border-bottom: 3px double $white;
+	border-bottom: 3px double $font;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
 }
 
 .day1 {
-	&__container {
-		display: flex;
-		text-align: center;
-		flex-direction: column;
-	}
 	&__list {
 		display: flex;
 		text-align: center;
