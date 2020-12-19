@@ -97,14 +97,18 @@ h2 {
 		background-color: $feature;
 		transform-origin: center left;
 		transform: rotate(-90deg);
+		transition: all 0.2s;
+		transition-timing-function: cubic-bezier(0.5, -0.75, 0.7, 2);
+		border-radius: 16px;
 		@media screen and (max-width: 500px) {
 			height: 0.4rem;
 		}
-		&--hour {
+		&--hours {
 			width: 30%;
 		}
-		&--second {
+		&--seconds {
 			height: 0.4rem;
+			width: 45%;
 			@media screen and (max-width: 500px) {
 				height: 0.2rem;
 			}
