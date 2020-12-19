@@ -1,11 +1,10 @@
 import "../scss/main.scss";
 
 // uncomment the lines below to enable PWA
-// import {registerSW} from './pwa.js';
-// registerSW();
+import { registerSW } from "./pwa.js";
+registerSW();
 
-
-// DAY1
+// DAY1 keyboard
 
 const buttons = document.querySelectorAll(".day1__button--js");
 
@@ -25,7 +24,7 @@ function playSound(e) {
 window.addEventListener("keydown", playSound);
 
 // button.addEventListener("click", playSound);   ----czemu to nie dziaaaa
-// button.onclick = playSound;                    
+// button.onclick = playSound;
 
 for (let button of buttons) {
 	button.addEventListener("transitionend", () => {
@@ -33,5 +32,24 @@ for (let button of buttons) {
 	});
 }
 
-// DAY2 
+// DAY2 CLOCK
+const handSecond = document.querySelector(".day2__hand--seconds");
+const handMinute = document.querySelector(".day2__hand--minutes");
+const handHours = document.querySelector(".day2__hand--hours");
 
+function setDate() {
+	const now = new Date();
+	const seconds = now.getSeconds();
+	const minutes = now.getMinutes();
+	const hours = now.getHours();
+	const secondsDegrees = (seconds / 60) * 360 - 90;
+	const minutesDegrees = (minutes / 60) * 360 - 90;
+	const hoursDegrees = (hours / 12) * 360 - 90;
+	handSecond.style.transform = `rotate(${secondsDegrees}deg)`;
+	handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
+	handHours.style.transform = `rotate(${hoursDegrees}deg)`;
+	console.log(`it is ${hours}:${minutes}:${seconds}`);
+	
+}
+
+setInterval(setDate, 1000); //odpala wskazaną funkcę co 1s (1000 ms);
