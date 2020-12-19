@@ -1,154 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>JavaScript 30</title>
-		<meta name="description" content="JavaScript 30 - Wes Bos Challenge" />
+		<meta name="description" content="JavaScript 30 - Wes Bos Challenge">
 
-		<meta property="og:title" content="JavaScript 30 Challenge" />
+		<meta property="og:title" content="JavaScript 30 Challenge">
 
-		<meta
-			property="og:description"
-			content="JavaScript 30 - Wes Bos Challenge"
-		/>
-		<meta
-			property="og:url"
-			content="https://michal-krawczyk10.github.io/JavaScript30"
-		/>
+		<meta property="og:description" content="JavaScript 30 - Wes Bos Challenge">
+		<meta property="og:url" content="https://michal-krawczyk10.github.io/JavaScript30">
 		<!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
-		<meta
-			property="og:image"
-			content="https://maciejkorsan.com/wtf-gulp-starter/assets/img/cover.png"
-		/>
+		<meta property="og:image" content="https://maciejkorsan.com/wtf-gulp-starter/assets/img/cover.png">
 
 		<!-- uncomment the line below to enable PWA  -->
-		<link rel="manifest" href="manifest.json" />
+		<link rel="manifest" href="manifest.json">
 
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="pwa/apple-icon-180.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="167x167"
-			href="pwa/apple-icon-167.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="152x152"
-			href="pwa/apple-icon-152.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="120x120"
-			href="pwa/apple-icon-120.png"
-		/>
+		
+		
+		
+		
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
 
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2048-2732.png"
-			media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2732-2048.png"
-			media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1668-2388.png"
-			media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2388-1668.png"
-			media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1668-2224.png"
-			media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2224-1668.png"
-			media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1536-2048.png"
-			media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2048-1536.png"
-			media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1242-2688.png"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2688-1242.png"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1125-2436.png"
-			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2436-1125.png"
-			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-828-1792.png"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1792-828.png"
-			media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1242-2208.png"
-			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-2208-1242.png"
-			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-750-1334.png"
-			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1334-750.png"
-			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-640-1136.png"
-			media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="pwa/apple-splash-1136-640.png"
-			media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-		/>
-	</head>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<link rel="apple-touch-icon" href="pwa/apple-icon-180.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2048-2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2732-2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1668-2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2388-1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1536-2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2048-1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1668-2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2224-1668.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1620-2160.png" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2160-1620.png" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1284-2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2778-1284.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1170-2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2532-1170.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1125-2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2436-1125.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1242-2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2688-1242.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-828-1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1792-828.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1242-2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-2208-1242.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-750-1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1334-750.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-640-1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="pwa/apple-splash-1136-640.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+
+</head>
 	<body>
 		<main>
 			<h1>JavaScript30 adventure</h1>
@@ -190,9 +114,7 @@
 				<article class="day__container">
 					<h2>CSS + JS Clock</h2>
 					<div class="day2__clock">
-						<span class="day2__hand day2__hand--hours"></span
-						><span class="day2__hand day2__hand--minutes"></span
-						><span class="day2__hand day2__hand--seconds"></span>
+						<span class="day2__hand day2__hand--hours"></span><span class="day2__hand day2__hand--minutes"></span><span class="day2__hand day2__hand--seconds"></span>
 					</div>
 				</article>
 			</section>
@@ -281,41 +203,7 @@
 				<article class="day__container"><h2></h2></article>
 			</section>
 		</main>
-	</body>
-</html>
-<audio
-	data-key="65"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/clap.wav"
-></audio
-><audio
-	data-key="83"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/hihat.wav"
-></audio
-><audio
-	data-key="68"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/kick.wav"
-></audio
-><audio
-	data-key="70"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"
-></audio
-><audio
-	data-key="71"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/boom.wav"
-></audio
-><audio
-	data-key="72"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/ride.wav"
-></audio
-><audio
-	data-key="74"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/snare.wav"
-></audio
-><audio
-	data-key="75"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tom.wav"
-></audio
-><audio
-	data-key="76"
-	src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tink.wav"
-></audio>
+	
+
+<audio data-key="65" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/clap.wav"></audio><audio data-key="83" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/hihat.wav"></audio><audio data-key="68" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/kick.wav"></audio><audio data-key="70" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/openhat.wav"></audio><audio data-key="71" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/boom.wav"></audio><audio data-key="72" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/ride.wav"></audio><audio data-key="74" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/snare.wav"></audio><audio data-key="75" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tom.wav"></audio><audio data-key="76" src="https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/sounds/tink.wav"></audio>
+</body></html>
