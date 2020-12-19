@@ -1,10 +1,10 @@
 import "../scss/main.scss";
 
 // uncomment the lines below to enable PWA
-// import {registerSW} from './pwa.js';
-// registerSW();
+import { registerSW } from "./pwa.js";
+registerSW();
 
-// DAY1
+// DAY1 keyboard
 
 const buttons = document.querySelectorAll(".day1__button--js");
 
@@ -49,6 +49,7 @@ function setDate() {
 	handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
 	handHours.style.transform = `rotate(${hoursDegrees}deg)`;
 	console.log(`it is ${hours}:${minutes}:${seconds}`);
+	
 }
 
 setInterval(setDate, 1000); //odpala wskazaną funkcę co 1s (1000 ms);
