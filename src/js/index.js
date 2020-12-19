@@ -49,7 +49,6 @@ function setDate() {
 	handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
 	handHours.style.transform = `rotate(${hoursDegrees}deg)`;
 	console.log(`it is ${hours}:${minutes}:${seconds}`);
-	
 }
 
 setInterval(setDate, 1000); //odpala wskazaną funkcę co 1s (1000 ms);
