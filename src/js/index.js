@@ -35,7 +35,7 @@ for (let button of buttons) {
 // DAY2 CLOCK
 const handSecond = document.querySelector(".day2__hand--seconds");
 const handMinute = document.querySelector(".day2__hand--minutes");
-const handHours = document.querySelector(".day2__hand--hours");
+const handHour = document.querySelector(".day2__hand--hours");
 const hands = document.querySelectorAll(".day2__hand");
 
 function setDate() {
@@ -48,14 +48,17 @@ function setDate() {
 	const hoursDegrees = (hours / 12) * 360 - 90 + (minutesDegrees + 90) / 12;
 	handSecond.style.transform = `rotate(${secondsDegrees}deg)`;
 	handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
-	handHours.style.transform = `rotate(${hoursDegrees}deg)`;
+	handHour.style.transform = `rotate(${hoursDegrees}deg)`;
 	console.log(`it is ${hours}:${minutes}:${seconds}`);
-	if (secondsDegrees == -90) {
-		handSecond.style.transition = "none";
-	} else {
-		handSecond.style.transition = "";
+	for (let stopTrans of hands) {
+		if (secondsDegrees == -90 || minutesDegrees == -90 || hoursDegrees == -90) {
+			stopTrans.style.transition = "none";
+		} else {
+			stopTrans.style.transition = "";
+		}
 	}
 }
+
 setInterval(setDate, 1000); //odpala wskazaną funkcje co 1s (1000 ms);
 
 // if (secondsDegrees === 90) {
