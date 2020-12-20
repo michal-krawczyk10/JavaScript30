@@ -36,6 +36,7 @@ for (let button of buttons) {
 const handSecond = document.querySelector(".day2__hand--seconds");
 const handMinute = document.querySelector(".day2__hand--minutes");
 const handHours = document.querySelector(".day2__hand--hours");
+const hands = document.querySelectorAll(".day2__hand");
 
 function setDate() {
 	const now = new Date();
@@ -44,11 +45,25 @@ function setDate() {
 	const hours = now.getHours();
 	const secondsDegrees = (seconds / 60) * 360 - 90;
 	const minutesDegrees = (minutes / 60) * 360 - 90;
-	const hoursDegrees = (hours / 12) * 360 - 90;
+	const hoursDegrees = (hours / 12) * 360 - 90 + (minutesDegrees + 90) / 12;
 	handSecond.style.transform = `rotate(${secondsDegrees}deg)`;
 	handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
 	handHours.style.transform = `rotate(${hoursDegrees}deg)`;
 	console.log(`it is ${hours}:${minutes}:${seconds}`);
+	if (secondsDegrees == -90) {
+		handSecond.style.transition = "none";
+	} else {
+		handSecond.style.transition = "";
+	}
 }
+setInterval(setDate, 1000); //odpala wskazaną funkcje co 1s (1000 ms);
 
-setInterval(setDate, 1000); //odpala wskazaną funkcę co 1s (1000 ms);
+// if (secondsDegrees === 90) {
+// 	hands.forEach((hand.style.tranform = `none`));
+// } else {
+// 	hands.forEach((hand.style.transform = ""));
+// }
+
+// function glich() {
+
+// }
