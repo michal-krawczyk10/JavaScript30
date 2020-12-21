@@ -134,6 +134,9 @@ h2 {
 		}
 	}
 	&__img {
+		margin: 1rem auto;
+		max-width: 640px;
+		height: auto;
 		background-color: var(--base);
 		padding: var(--spacing);
 		filter: blur(var(--blur));
