@@ -74,6 +74,9 @@ h2 {
 	}
 }
 .day2 {
+	&__digital {
+		padding: 2rem;
+	}
 	&__clock {
 		width: 24rem;
 		height: 24rem;
@@ -140,5 +143,8 @@ h2 {
 		background-color: var(--base);
 		padding: var(--spacing);
 		filter: blur(var(--blur));
+	}
+	&--special {
+		color: var(--base);
 	}
 }
