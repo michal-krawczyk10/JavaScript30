@@ -74,6 +74,9 @@ h2 {
 	}
 }
 .day2 {
+	&__digital {
+		padding: 2rem;
+	}
 	&__clock {
 		width: 24rem;
 		height: 24rem;
@@ -113,5 +116,35 @@ h2 {
 				height: 0.2rem;
 			}
 		}
+	}
+}
+.day3 {
+	&__controls {
+		font-size: 2rem;
+		padding: 1rem;
+		min-width: 60vw;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		& > label {
+			margin-bottom: 1rem;
+		}
+		& > input {
+			width: 100%;
+		}
+	}
+	&__img {
+		margin: 1rem auto;
+		max-width: 640px;
+		height: auto;
+		background-color: var(--base);
+		padding: var(--spacing);
+		filter: blur(var(--blur));
+	}
+	&--special {
+		color: var(--base);
 	}
 }

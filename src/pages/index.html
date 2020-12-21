@@ -203,6 +203,7 @@
 						><span class="day2__hand day2__hand--minutes"></span
 						><span class="day2__hand day2__hand--seconds"></span>
 					</div>
+					<div class="day2__digital"></div>
 				</article>
 			</section>
 			<section class="day">
@@ -211,26 +212,44 @@
 						Update CSS variables with <span class="day3--special">JS</span>
 					</h2>
 					<div class="day3__controls">
-						<label for="spacing">Spacing:</label
-						><input
-							type="range"
-							name="spacing"
-							value="10"
-							min="10"
-							max="200"
-							data-sizing="px"
-						/>
-						<label for="blur">Blur:</label
-						><input
-							name="blur"
-							type="range"
-							value="10"
-							min="0"
-							max="25"
-							data-sizing="px"
-						/><label for="color">Color:</label
-						><input name="color" type="color" value="#FFD400" />
+						<div class="day3__form">
+							<label for="spacing">Spacing:</label
+							><input
+								class="day3__input"
+								type="range"
+								name="spacing"
+								value="10"
+								min="0"
+								max="200"
+								data-sizing="px"
+							/>
+						</div>
+						<div class="day3__form">
+							<label for="blur">Blur:</label
+							><input
+								class="day3__input"
+								name="blur"
+								type="range"
+								value="10"
+								min="0"
+								max="25"
+								data-sizing="px"
+							/>
+						</div>
+						<div class="day3__form">
+							<label for="color">Color:</label
+							><input
+								class="day3__input"
+								name="base"
+								type="color"
+								value="#FFD400"
+							/>
+						</div>
 					</div>
+					<img
+						class="day3__img"
+						src="https://raw.githubusercontent.com/michal-krawczyk10/JavaScript30/feat/day3/src/assets/img/day3.png"
+					/>
 				</article>
 			</section>
 			<section class="day">

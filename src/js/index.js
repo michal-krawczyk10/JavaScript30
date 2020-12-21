@@ -37,6 +37,7 @@ const handSecond = document.querySelector(".day2__hand--seconds");
 const handMinute = document.querySelector(".day2__hand--minutes");
 const handHour = document.querySelector(".day2__hand--hours");
 const hands = document.querySelectorAll(".day2__hand");
+const digitalClock = document.querySelector(".day2__digital");
 
 function setDate() {
 	const now = new Date();
@@ -49,7 +50,8 @@ function setDate() {
 	handSecond.style.transform = `rotate(${secondsDegrees}deg)`;
 	handMinute.style.transform = `rotate(${minutesDegrees}deg)`;
 	handHour.style.transform = `rotate(${hoursDegrees}deg)`;
-	console.log(`it is ${hours}:${minutes}:${seconds}`);
+	digitalClock.innerHTML = `it is ${hours}:${minutes}:${seconds}`;
+
 	for (let stopTrans of hands) {
 		if (secondsDegrees == -90 || minutesDegrees == -90 || hoursDegrees == -90) {
 			stopTrans.style.transition = "none";
@@ -70,3 +72,18 @@ setInterval(setDate, 1000); //odpala wskazaną funkcje co 1s (1000 ms);
 // function glich() {
 
 // }
+
+const inputs = document.querySelectorAll(".day3__input");
+
+inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+inputs.forEach((input) => input.addEventListener("mousemove", handleUpdate));
+inputs.forEach((input) => input.addEventListener("touchmove", handleUpdate));
+
+function handleUpdate() {
+	const suffix = this.dataset.sizing || "";
+	document.documentElement.style.setProperty(
+		`--${this.name}`,
+		this.value + suffix
+	);
+	console.log(this.value + suffix);
+}
