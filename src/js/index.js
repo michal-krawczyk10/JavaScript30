@@ -76,7 +76,14 @@ setInterval(setDate, 1000); //odpala wskazaną funkcje co 1s (1000 ms);
 const inputs = document.querySelectorAll(".day3__input");
 
 inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+inputs.forEach((input) => input.addEventListener("mousemove", handleUpdate));
+inputs.forEach((input) => input.addEventListener("touchmove", handleUpdate));
 
 function handleUpdate() {
-	console.log(this.value);
+	const suffix = this.dataset.sizing || "";
+	document.documentElement.style.setProperty(
+		`--${this.name}`,
+		this.value + suffix
+	);
+	console.log(this.value + suffix);
 }
