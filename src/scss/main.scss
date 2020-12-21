@@ -115,3 +115,22 @@ h2 {
 		}
 	}
 }
+.day3 {
+	&__controls {
+		font-size: 2rem;
+		padding: 1rem;
+		min-width: 60vw;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		& > label {
+			margin-bottom: 1rem;
+		}
+		& > input {
+		width: 100%;
+}
+	}
+}
