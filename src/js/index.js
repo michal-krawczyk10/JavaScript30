@@ -79,7 +79,7 @@ function handleUpdate() {
 	);
 	console.log(this.value + suffix);
 }
-// day 4 ARRAY CARDIO
+// DAY 4 ARRAY CARDIO
 const inventors = [
 	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
 	{ first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
@@ -118,7 +118,7 @@ const bornIn1500s = inventors.filter((inventor) => {
 		return true;
 	}
 });
-// //destructuring objects nested in array, with pulling it into new variable, usable later, but unnessesary!
+// //destructuring objects nested in array, with pulling it into new unique variable, usable later, but annoying to use in this case as lot of manual code lines needed later, so I greyed it, to remember the method
 // const [
 // 	{ first: newFirst, last: newLast, year: newYear, passed: newPassed },
 // 	{ first: d4p1BFirst, last: d4p1BLast, year: d4p1BYear, passed: d4p1BPassed },
