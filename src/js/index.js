@@ -112,7 +112,9 @@ const people = [
 ];
 //   array.prototype.filter()
 // 1. the list of inventors for those who were born in 1500's
-const day4p1 = document.querySelector(".day4__p1");
+//filter can tak 10 things and return 2, or any
+
+const day4p1 = document.querySelector(".day4__p1--js");
 const bornIn1500s = inventors.filter((inventor) => {
 	if (inventor.year >= 1500 && inventor.year <= 1599) {
 		return true;
@@ -129,3 +131,35 @@ bornIn1500s.forEach((arrayItem) => {
 	const { first, last, year, passed } = arrayItem;
 	day4p1.innerHTML += `<p>${first} ${last} lived from ${year} to ${passed}</p>`; // innerHTML +=, makes all added, not only one;
 });
+
+//array.prototype.map()
+//2. give us and array of the inventors first and last names
+
+//map takes inner array, do something to it and returns new array of the same lenght; takes 10 returns 10;
+
+const fullInventorNames = inventors.map(
+	(inventor) => ` ${inventor.first} ${inventor.last}`
+);
+
+const day4p2 = document.querySelector(".day4__p2--js");
+day4p2.innerHTML = fullInventorNames;
+
+//array.prototype.sort
+//3 sort the inventors by birthdate, oldest to youngest
+// sort get two items and check is 'a' bigger then 'b' and puts bigger on top
+const orderedInventors = inventors.sort(function (a, b) {
+	if (a.year > b.year) {
+		return 1;
+	} else {
+		return -1;
+	}
+});
+
+const day4p3 = document.querySelector(".day4__p3--js");
+
+orderedInventors.forEach((arrayItem) => {
+	const { first, last, year, passed } = arrayItem;
+	day4p3.innerHTML += `<p>${first} ${last} was born in ${year}</p>`;
+});
+
+
