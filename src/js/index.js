@@ -63,15 +63,7 @@ function setDate() {
 
 setInterval(setDate, 1000); //odpala wskazaną funkcje co 1s (1000 ms);
 
-// if (secondsDegrees === 90) {
-// 	hands.forEach((hand.style.tranform = `none`));
-// } else {
-// 	hands.forEach((hand.style.transform = ""));
-// }
-
-// function glich() {
-
-// }
+//DAY 3
 
 const inputs = document.querySelectorAll(".day3__input");
 
@@ -87,7 +79,7 @@ function handleUpdate() {
 	);
 	console.log(this.value + suffix);
 }
-// day 4
+// day 4 ARRAY CARDIO
 const inventors = [
 	{ first: "Albert", last: "Einstein", year: 1879, passed: 1955 },
 	{ first: "Isaac", last: "Newton", year: 1643, passed: 1727 },
@@ -118,3 +110,22 @@ const people = [
 	"Bethea, Erin",
 	"Bevan, Aneurin",
 ];
+//   array.prototype.filter()
+// 1. the list of inventors for those who were born in 1500's
+const day4p1 = document.querySelector(".day4__p1");
+const bornIn1500s = inventors.filter((inventor) => {
+	if (inventor.year >= 1500 && inventor.year <= 1599) {
+		return true;
+	}
+});
+// //destructuring objects nested in array, with pulling it into new variable, usable later, but unnessesary!
+// const [
+// 	{ first: newFirst, last: newLast, year: newYear, passed: newPassed },
+// 	{ first: d4p1BFirst, last: d4p1BLast, year: d4p1BYear, passed: d4p1BPassed },
+// ] = bornIn1500s;
+
+// better to do it this way: loop using forEach with destructuring objects of array
+bornIn1500s.forEach((arrayItem) => {
+	const { first, last, year, passed } = arrayItem;
+	day4p1.innerHTML += `<p>${first} ${last} lived from ${year} to ${passed}</p>`; // innerHTML +=, makes all added, not only one;
+});
