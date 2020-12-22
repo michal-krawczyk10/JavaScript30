@@ -173,4 +173,16 @@ const day4p4 = document.querySelector(".day4__p4--js");
 
 day4p4.innerHTML = totalYears;
 
-// 5
+// 5 sort inventors by years lived
+//use sort
+
+const oldestInventors = inventors.sort((a, b) => {
+	const oneInventor = a.passed - a.year;
+	const nextInventor = b.passed - b.year;
+	if (oneInventor > nextInventor) {
+		return -1;
+	} else {
+		return 1;
+	}
+});
+console.table(oldestsInventor);
