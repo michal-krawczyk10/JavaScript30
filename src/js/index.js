@@ -162,4 +162,15 @@ orderedInventors.forEach((arrayItem) => {
 	day4p3.innerHTML += `<p>${first} ${last} was born in ${year}</p>`;
 });
 
+// array.prototype.reduce
+// 4 how many years did all inventors live
+// reduce is another loop, makes total amount out of checked array values
 
+const totalYears = inventors.reduce((total, inventor) => {
+	return total + (inventor.passed - inventor.year);
+}, 0); // 0 at the end is important using reduce, as total is undefined during first loop; if we put other value here, it will be added
+const day4p4 = document.querySelector(".day4__p4--js");
+
+day4p4.innerHTML = totalYears;
+
+// 5
