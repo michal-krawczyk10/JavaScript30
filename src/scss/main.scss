@@ -150,3 +150,34 @@ h2 {
 		color: var(--base);
 	}
 }
+.day5 {
+	&__panels {
+		display: flex;
+		justify-content: center;
+		width: 100vw;
+	}
+	&__panel {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 500px;
+		width: 20vw;
+		background: no-repeat;
+		background-size: cover;
+		&--1 {
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-1.jpg?raw=true);
+		}
+		&--2 {
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-2.jpg?raw=true);
+		}
+		&--3 {
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-3.jpg?raw=true);
+		}
+		&--4 {
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-4.jpg?raw=true);
+		}
+		&--5 {
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-5.jpg?raw=true);
+		}
+	}
+}
