@@ -186,3 +186,14 @@ const oldestInventors = inventors.sort((a, b) => {
 	}
 });
 console.table(oldestsInventor);
+
+// 6 list of buleards in Paris that contain 'de' in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+//code underneath to bo used in dev tools of page linked above
+
+const d4Category = document.querySelector('.mw-category');
+const d4Links = [...d4Category.querySelectorAll('a')];
+
+const de = d4Links.map(link => link.textContent)
+.filter(streetName => streetName.includes('de'));
