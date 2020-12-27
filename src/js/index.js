@@ -258,12 +258,11 @@ const panels = document.querySelectorAll(".day5__panel");
 const textFloat = document.querySelector(".day5__text");
 console.log(textFloat);
 
-for (let panel of panels) {
-	panel.addEventListener("click", () => {
-		console.log('clic');
-		textFloat.classList.toggle("position--static");
-	});
+function toggleOpen() {
+	this.classList.toggle('open');
 }
+panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+
 
 // for (let button of buttons) {
 // 	button.addEventListener("transitionend", () => {

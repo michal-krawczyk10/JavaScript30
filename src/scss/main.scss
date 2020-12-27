@@ -35,14 +35,13 @@ h2 {
 
 .position--static {
 	position: static !important;
-
 }
 .visible {
 	visibility: visible !important;
 }
 .hide {
 	visibility: hidden !important;
-};
+}
 
 .day {
 	padding: 60px;
@@ -172,11 +171,24 @@ h2 {
 		flex-direction: column;
 		justify-content: center;
 		height: 480px;
-		width: 20%;
 		background: no-repeat;
 		background-size: cover;
 		position: relative;
-		transition: 0.5s;
+		flex: 1;
+		transition: flex 0.7s, visibility 0, transform 1s;
+		& > :first-child {
+			transform: translateY(-100%);
+			visibility: hidden;
+		}
+		& > :last-child {
+			transform: translateY(100%);
+		}
+		&.open--active {
+			transform: translateY(0);
+		}
+		&.open {
+			flex: 5;
+		}
 		&--1 {
 			background-position: center;
 			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-1.jpg?raw=true);
@@ -199,24 +211,17 @@ h2 {
 		}
 	}
 	&__text {
-
 		margin: 0 auto;
 		font-size: 2rem;
 		text-shadow: 1px 2px 3px $main;
 		width: 100%;
+		transition: 0.7s;
+		flex: 1 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		@media screen and (max-width: 800px) {
 			font-size: 1rem;
-		}
-
-		&--bottom {
-			position: absolute;
-			bottom: -2rem;
-			// visibility: hidden;
-		}
-		&--top {
-			position: absolute;
-			top: -2rem;
-			// visibility: hidden;
 		}
 	}
 }
