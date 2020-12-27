@@ -90,25 +90,25 @@ const inventors = [
 	{ first: "Max", last: "Planck", year: 1858, passed: 1947 },
 ];
 const people = [
+	"Bevan, Aneurin",
 	"Beck, Glenn",
-	"Becker, Carl",
-	"Beckett, Samuel",
-	"Beddoes Mick",
-	"Beecher, Henry",
-	"Beethoven, Ludwig",
+	"Ben-Gurion, David",
 	"Begin, Menachem",
 	"Belloc, Hilaire",
-	"Bellow, Saul",
-	"Benchley, Robert",
 	"Benenson, Peter",
-	"Ben-Gurion, David",
+	"Berry, Haile",
+	"Bethea, Erin",
 	"Benjamin, Walete",
 	"Benn, Tony",
 	"Bensons, Leana",
 	"Bernhard, Sandra",
-	"Berry, Haile",
-	"Bethea, Erin",
-	"Bevan, Aneurin",
+	"Becker, Carl",
+	"Beckett, Samuel",
+	"Beddoes, Mick",
+	"Beecher, Henry",
+	"Beethoven, Ludwig",
+	"Bellow, Saul",
+	"Benchley, Robert",
 ];
 //   array.prototype.filter()
 // 1. the list of inventors for those who were born in 1500's
@@ -185,15 +185,39 @@ const oldestInventors = inventors.sort((a, b) => {
 		return 1;
 	}
 });
-console.table(oldestsInventor);
+
+const day4p5 = document.querySelector(".day4__p5--js");
+
+oldestInventors.forEach((arrayItem) => {
+	const { first, last, year, passed } = arrayItem;
+	day4p5.innerHTML += `<p>${first} ${last} lived ${passed - year} years</p>`;
+});
 
 // 6 list of buleards in Paris that contain 'de' in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
 //code underneath to bo used in dev tools of page linked above
 
-const d4Category = document.querySelector('.mw-category');
-const d4Links = [...d4Category.querySelectorAll('a')];
+// const d4Category = document.querySelector('.mw-category');
+// const d4Links = [...d4Category.querySelectorAll('a')];
 
-const de = d4Links.map(link => link.textContent)
-.filter(streetName => streetName.includes('de'));
+// const de = d4Links.map(link => link.textContent)
+// .filter(streetName => streetName.includes('de'));
+
+// 7. sort exercise, using .split
+// sort array people alphabetically by first name
+const day4p7 = document.querySelector(".day4__p7--js");
+
+const day4Alpha = people.sort((lastOne, nextOne) => {
+	const [aLast, aFirst] = lastOne.split(", ");
+	const [bLast, bFirst] = nextOne.split(", ");
+	return aFirst > bFirst ? 1 : -1; //ternary operator, skrócona wersja (if)
+
+	// split use makes an array spliting by string used
+});
+
+day4Alpha.forEach((arrayItem) => {
+	const [a, b] = arrayItem.split(', ');
+	day4p7.innerHTML += `${b} ${a}, `;
+});
+console.log(day4Alpha);
