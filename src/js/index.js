@@ -253,3 +253,20 @@ let day4json = JSON.stringify(day4Transport);
 day4p8.innerHTML = day4json;
 
 // DAY 5
+
+const panels = document.querySelectorAll(".day5__panel");
+const textFloat = document.querySelector(".day5__text");
+console.log(textFloat);
+
+for (let panel of panels) {
+	panel.addEventListener("click", () => {
+		console.log('clic');
+		textFloat.classList.toggle("position--static");
+	});
+}
+
+// for (let button of buttons) {
+// 	button.addEventListener("transitionend", () => {
+// 		button.classList.remove("day1__button--click");
+// 	});
+// }
