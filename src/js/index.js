@@ -217,11 +217,40 @@ const day4Alpha = people.sort((lastOne, nextOne) => {
 });
 
 day4Alpha.forEach((arrayItem) => {
-	const [a, b] = arrayItem.split(', ');
+	const [a, b] = arrayItem.split(", ");
 	day4p7.innerHTML += `${b} ${a}, `;
 });
-console.log(day4Alpha);
 
 // 8. reduce exercise: sum up the instances of each of these in array:
-const d4Data = ['car', 'car', 'truck', 'truck', 'bike', 'walk','car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
-const day4p8 = document.querySelector('.day4__p8--js')
+const d4Data = [
+	"car",
+	"car",
+	"truck",
+	"truck",
+	"bike",
+	"walk",
+	"car",
+	"van",
+	"bike",
+	"walk",
+	"car",
+	"van",
+	"car",
+	"truck",
+];
+const day4p8 = document.querySelector(".day4__p8--js");
+
+// we start with a blank object, and every time we loop over one, we first see if is a zero there and then increment;
+const day4Transport = d4Data.reduce(function (obj, item) {
+	if (!obj[item]) {
+		obj[item] = 0;
+	} //check is there any object, set initial one to 0
+	obj[item]++; //increment on each instance
+	return obj;
+}, {});
+console.log(day4Transport);
+
+let day4json = JSON.stringify(day4Transport);
+day4p8.innerHTML = day4json;
+
+// DAY 5
