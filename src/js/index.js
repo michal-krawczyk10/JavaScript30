@@ -248,7 +248,6 @@ const day4Transport = d4Data.reduce(function (obj, item) {
 	obj[item]++; //increment on each instance
 	return obj;
 }, {});
-console.log(day4Transport);
 
 let day4json = JSON.stringify(day4Transport);
 day4p8.innerHTML = day4json;
