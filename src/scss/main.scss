@@ -184,6 +184,7 @@ h2 {
 		}
 		&.open {
 			flex: 7;
+			transition: flex 0.7s, transform 1s;
 		}
 		&--1 {
 			background-position: center;
@@ -220,7 +221,4 @@ h2 {
 			font-size: 1rem;
 		}
 	}
-}
-.open--active {
-	transform: translateY(100%);
 }
