@@ -221,3 +221,7 @@ day4Alpha.forEach((arrayItem) => {
 	day4p7.innerHTML += `${b} ${a}, `;
 });
 console.log(day4Alpha);
+
+// 8. reduce exercise: sum up the instances of each of these in array:
+const d4Data = ['car', 'car', 'truck', 'truck', 'bike', 'walk','car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+const day4p8 = document.querySelector('.day4__p8--js')
