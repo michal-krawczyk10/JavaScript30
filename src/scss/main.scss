@@ -164,18 +164,21 @@ h2 {
 		background: no-repeat;
 		background-size: cover;
 		&--1 {
+			background-position: center;
 			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-1.jpg?raw=true);
 		}
 		&--2 {
+			background-position: center;
 			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-2.jpg?raw=true);
 		}
 		&--3 {
+			background-position: center;
 			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-3.jpg?raw=true);
 		}
-		&--4 {
+		&--4 {background-position: center;
 			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-4.jpg?raw=true);
 		}
-		&--5 {
+		&--5 {background-position: right;
 			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-5.jpg?raw=true);
 		}
 	}
