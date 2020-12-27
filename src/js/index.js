@@ -255,14 +255,20 @@ day4p8.innerHTML = day4json;
 // DAY 5
 
 const panels = document.querySelectorAll(".day5__panel");
-const textFloat = document.querySelector(".day5__text");
-console.log(textFloat);
 
 function toggleOpen() {
-	this.classList.toggle('open');
+	this.classList.toggle("open");
 }
-panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+function toggleActive(e) {
+	if (e.propertyName.includes("flex")) {
+		this.classList.toggle("open--active");
+	}
+}
 
+panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
+
+panels.forEach((panel) =>
+	panel.addEventListener("transitionend", toggleActive));
 
 // for (let button of buttons) {
 // 	button.addEventListener("transitionend", () => {

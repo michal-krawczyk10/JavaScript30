@@ -175,19 +175,15 @@ h2 {
 		background-size: cover;
 		position: relative;
 		flex: 1;
-		transition: flex 0.7s, visibility 0, transform 1s;
+		transition: flex 0.7s, transform 1s;
 		& > :first-child {
 			transform: translateY(-100%);
-			visibility: hidden;
 		}
 		& > :last-child {
 			transform: translateY(100%);
 		}
-		&.open--active {
-			transform: translateY(0);
-		}
 		&.open {
-			flex: 5;
+			flex: 7;
 		}
 		&--1 {
 			background-position: center;
@@ -224,4 +220,7 @@ h2 {
 			font-size: 1rem;
 		}
 	}
+}
+.open--active {
+	transform: translateY(100%);
 }
