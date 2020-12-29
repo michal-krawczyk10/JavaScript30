@@ -32,6 +32,17 @@ h1 {
 h2 {
 	margin: 0 auto 40px;
 }
+
+.position--static {
+	position: static !important;
+}
+.visible {
+	visibility: visible !important;
+}
+.hide {
+	visibility: hidden !important;
+}
+
 .day {
 	padding: 60px;
 	width: 100vw;
@@ -125,7 +136,6 @@ h2 {
 	&__controls {
 		font-size: 2rem;
 		padding: 1rem;
-		min-width: 60vw;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -140,8 +150,8 @@ h2 {
 		}
 	}
 	&__img {
+		width: 100%;
 		margin: 1rem auto;
-		max-width: 640px;
 		background-color: var(--base);
 		padding: var(--spacing);
 		filter: blur(var(--blur));
@@ -149,4 +159,74 @@ h2 {
 	&--special {
 		color: var(--base);
 	}
+}
+.day5 {
+	&__panels {
+		display: flex;
+		justify-content: center;
+		width: 100vw;
+	}
+	&__panel {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 90vh;
+		background: no-repeat;
+		background-size: cover;
+		position: relative;
+		flex: 1;
+		transition: 0.5s;
+		& > :first-child {
+			transform: translateY(0);
+		}
+		& > :last-child {
+			transform: translateY(0);
+		}
+		&.open {
+			flex: 7;
+			transition: flex 0.5s;
+		}
+		&--1 {
+			background-position: center;
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-1.jpg?raw=true);
+		}
+		&--2 {
+			background-position: center;
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-2.jpg?raw=true);
+		}
+		&--3 {
+			background-position: center;
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-3.jpg?raw=true);
+		}
+		&--4 {
+			background-position: center;
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-4.jpg?raw=true);
+		}
+		&--5 {
+			background-position: right;
+			background-image: url(https://github.com/michal-krawczyk10/JavaScript30/blob/master/src/assets/img/d5-5.jpg?raw=true);
+		}
+	}
+	&__text {
+		margin: 0 auto;
+		font-size: 2rem;
+		text-shadow: 1px 2px 3px $main;
+		width: 100%;
+		transition: 0.7s;
+		flex: 1 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media screen and (max-width: 800px) {
+			font-size: 1rem;
+		}
+	}
+}
+.open--active > :first-child {
+	transform: translateY(-100%);
+	opacity: 0;
+}
+.open--active > :last-child {
+	opacity: 0;
+	transform: translateY(100%);
 }

@@ -248,9 +248,35 @@ const day4Transport = d4Data.reduce(function (obj, item) {
 	obj[item]++; //increment on each instance
 	return obj;
 }, {});
-console.log(day4Transport);
 
 let day4json = JSON.stringify(day4Transport);
 day4p8.innerHTML = day4json;
 
 // DAY 5
+
+const panels = document.querySelectorAll(".day5__panel");
+
+function toggleOpen() {
+	panels.forEach((panel) => {
+		panel.classList.remove("open");
+	});
+	this.classList.toggle("open");
+	
+}
+function toggleActive(e) {
+	if (e.propertyName.includes("flex")) {
+		this.classList.toggle("open--active");
+	}
+}
+
+panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
+
+panels.forEach((panel) =>
+	panel.addEventListener("transitionend", toggleActive)
+);
+
+// for (let button of buttons) {
+// 	button.addEventListener("transitionend", () => {
+// 		button.classList.remove("day1__button--click");
+// 	});
+// }
