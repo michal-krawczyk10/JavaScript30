@@ -257,7 +257,11 @@ day4p8.innerHTML = day4json;
 const panels = document.querySelectorAll(".day5__panel");
 
 function toggleOpen() {
+	panels.forEach((panel) => {
+		panel.classList.remove("open");
+	});
 	this.classList.toggle("open");
+	
 }
 function toggleActive(e) {
 	if (e.propertyName.includes("flex")) {
@@ -268,7 +272,8 @@ function toggleActive(e) {
 panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
 
 panels.forEach((panel) =>
-	panel.addEventListener("transitionend", toggleActive));
+	panel.addEventListener("transitionend", toggleActive)
+);
 
 // for (let button of buttons) {
 // 	button.addEventListener("transitionend", () => {
