@@ -261,7 +261,6 @@ function toggleOpen() {
 		panel.classList.remove("open");
 	});
 	this.classList.toggle("open");
-	
 }
 function toggleActive(e) {
 	if (e.propertyName.includes("flex")) {
