@@ -279,3 +279,7 @@ panels.forEach((panel) =>
 // 		button.classList.remove("day1__button--click");
 // 	});
 // }
+
+//DAY 6
+
+	
