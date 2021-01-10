@@ -303,11 +303,17 @@ function findMatches(wordToMatch, cities) {
 }
 
 function displayMatches() {
-	console.log(this.value);
-};
+	const matchArray = findMatches(this.value, cities); //we have our data
+	const html = matchArray
+		.map((place) => {
+			return `<li class="day6__item"><span>${place.city}, ${place.state}</span><span>${place.population}</span></li>`;
+		})
+		.join(""); //.join turns from array with multiple items onto one big string
+	suggestions.innerHTML = html;
+}
 
-const searchInput = document.querySelector('.day6__input');
-const suggestions = document.querySelector('.day6__list');
+const searchInput = document.querySelector(".day6__input");
+const suggestions = document.querySelector(".day6__list");
 
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEventListener("change", displayMatches); //works after enter, or click outside
+searchInput.addEventListener("keyup", displayMatches); //works after every key pressed

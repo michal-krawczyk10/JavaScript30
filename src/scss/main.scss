@@ -230,3 +230,17 @@ h2 {
 	opacity: 0;
 	transform: translateY(100%);
 }
+
+.day6 {
+	&__list {
+		display: flex;
+		flex-direction: column;
+	}
+	&__item {
+		padding: 1rem;
+		border: 1px solid $feature;
+		display: flex;
+		justify-content: space-between;
+		& > span {margin: 0 10px};
+	}
+}
