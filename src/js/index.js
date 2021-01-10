@@ -282,4 +282,22 @@ panels.forEach((panel) =>
 
 //DAY 6
 
-	
+const endpoint =
+	"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+
+const cities = []; //need ampty array to put data into & then fetch
+
+fetch(endpoint) //fetch as an argument uses url we want to ask about smth
+	.then((resp) => resp.json()) //answer is amended to .json
+	.then((resp) => cities.push(...resp)); //in resp is json with answer. //push adds element into array, use spread to change array into individual arguments
+// .catch((error) => console.log("failed to fetch cities list")); //in case of some errors with api, adress etc, usefull
+
+function findMatches(wordToMatch, cities) {
+	return cities.filter((place) => {
+		//put a variable into regular expression
+
+		const regex = new RegExp(wordToMatch, "gi"); //RegExp is used for matching text with a pattern; uses flags: g - global search, i - ignores upper/lower cases, m - search in many lines
+		return place.city.match(regex) || place.state.match(regex); //match method retrieves the result of matching a string against a regular expression
+	});
+}
+
