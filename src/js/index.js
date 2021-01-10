@@ -4,6 +4,7 @@ import "../scss/main.scss";
 import { registerSW } from "./pwa.js";
 registerSW();
 
+("use strict");
 // DAY1 keyboard
 
 const buttons = document.querySelectorAll(".day1__button--js");
@@ -289,8 +290,8 @@ const cities = []; //need ampty array to put data into & then fetch
 
 fetch(endpoint) //fetch as an argument uses url we want to ask about smth
 	.then((resp) => resp.json()) //answer is amended to .json
-	.then((resp) => cities.push(...resp)); //in resp is json with answer. //push adds element into array, use spread to change array into individual arguments
-// .catch((error) => console.log("failed to fetch cities list")); //in case of some errors with api, adress etc, usefull
+	.then((resp) => cities.push(...resp)) //in resp is json with answer. //push adds element into array, use spread to change array into individual arguments
+	.catch((error) => console.log("failed to fetch cities list")); //in case of some errors with api, adress etc, usefull
 
 function findMatches(wordToMatch, cities) {
 	return cities.filter((place) => {
@@ -301,3 +302,12 @@ function findMatches(wordToMatch, cities) {
 	});
 }
 
+function displayMatches() {
+	console.log(this.value);
+};
+
+const searchInput = document.querySelector('.day6__input');
+const suggestions = document.querySelector('.day6__list');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
