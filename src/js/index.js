@@ -4,6 +4,7 @@ import "../scss/main.scss";
 import { registerSW } from "./pwa.js";
 registerSW();
 
+("use strict");
 // DAY1 keyboard
 
 const buttons = document.querySelectorAll(".day1__button--js");
@@ -261,7 +262,6 @@ function toggleOpen() {
 		panel.classList.remove("open");
 	});
 	this.classList.toggle("open");
-	
 }
 function toggleActive(e) {
 	if (e.propertyName.includes("flex")) {
@@ -280,3 +280,49 @@ panels.forEach((panel) =>
 // 		button.classList.remove("day1__button--click");
 // 	});
 // }
+
+//DAY 6
+
+const endpoint =
+	"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+
+const cities = []; //need ampty array to put data into & then fetch
+
+fetch(endpoint) //fetch as an argument uses url we want to ask about smth
+	.then((resp) => resp.json()) //answer is amended to .json
+	.then((resp) => cities.push(...resp)) //in resp is json with answer. //push adds element into array, use spread to change array into individual arguments
+	.catch((error) => console.log("failed to fetch cities list")); //in case of some errors with api, adress etc, usefull
+
+function findMatches(wordToMatch, cities) {
+	return cities.filter((place) => {
+		//put a variable into regular expression
+
+		const regex = new RegExp(wordToMatch, "gi"); //RegExp is used for matching text with a pattern; uses flags: g - global search, i - ignores upper/lower cases, m - search in many lines
+		return place.city.match(regex) || place.state.match(regex); //match method retrieves the result of matching a string against a regular expression
+	});
+}
+
+function displayMatches() {
+	const matchArray = findMatches(this.value, cities); //we have our data
+	const html = matchArray
+		.map((place) => {
+			const regex = new RegExp(this.value, "gi"); //find whatever match in regex
+			const cityName = place.city.replace(
+				regex,
+				`<span class="day6__item--hl">${this.value}</span>`
+			); //replace with <span>
+			const stateName = place.state.replace(
+				regex,
+				`<span class="day6__item--hl">${this.value}</span>`
+			);
+			return `<li class="day6__item"><span>${cityName}, ${stateName}</span><span>${place.population}</span></li>`;
+		})
+		.join(""); //.join turns from array with multiple items onto one big string
+	suggestions.innerHTML = html;
+}
+
+const searchInput = document.querySelector(".day6__input");
+const suggestions = document.querySelector(".day6__list");
+
+searchInput.addEventListener("change", displayMatches); //works after enter, or click outside
+searchInput.addEventListener("keyup", displayMatches); //works after every key pressed
