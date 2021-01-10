@@ -306,7 +306,16 @@ function displayMatches() {
 	const matchArray = findMatches(this.value, cities); //we have our data
 	const html = matchArray
 		.map((place) => {
-			return `<li class="day6__item"><span>${place.city}, ${place.state}</span><span>${place.population}</span></li>`;
+			const regex = new RegExp(this.value, "gi"); //find whatever match in regex
+			const cityName = place.city.replace(
+				regex,
+				`<span class="day6__item--hl">${this.value}</span>`
+			); //replace with <span>
+			const stateName = place.state.replace(
+				regex,
+				`<span class="day6__item--hl">${this.value}</span>`
+			);
+			return `<li class="day6__item"><span>${cityName}, ${stateName}</span><span>${place.population}</span></li>`;
 		})
 		.join(""); //.join turns from array with multiple items onto one big string
 	suggestions.innerHTML = html;

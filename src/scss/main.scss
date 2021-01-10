@@ -242,5 +242,8 @@ h2 {
 		display: flex;
 		justify-content: space-between;
 		& > span {margin: 0 10px};
+		&--hl {
+		color: $feature;
+}
 	}
 }
